@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance App</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="title">Attendance Form</h1>
+      <p class="date" id="date"></p>
+    </header>
+
+    <div class="input-section">
+
+      <div class="left-section">
+        
+        <div class="roll-box">
+          <label class="roll-label" for="roll-input"> Enter Roll Number </label>
+
+          <input
+            class="roll-input"
+            id="roll-input"
+            type="number"
+            placeholder="for e.g. 101"
+          />
+          <div class ="roll-button">
+              <button class="roll-present" id="roll-present">Present</button>
+              <button class="roll-absent" id="roll-absent">Absent</button>
+          </div>
+
+        </div>
+
+        <div class="submit-box" id="submitBox">SUBMIT</div>
+      </div>
+
+      <div class="photo-box">
+        <label class="photo-label" for="photo-input">Camera Verifcation</label>
+
+        <div class="card camera-card">
+
+          <div class="camera-wrapper" id="cameraWrapper">
+            
+            <video id="videoFeed" autoplay playsinline></video>
+            
+            <canvas id="snapCanvas"></canvas>
+            
+            <div class="camera-placeholder" id="cameraPlaceholder">
+              <span class="cam-icon">⬡</span>
+              <p>Camera inactive</p>
+            </div>
+            
+            <div class="capture-flash" id="captureFlash"></div>
+          </div>
+
+          <div class="camera-controls">
+            <button class="button-open" id="openCamBtn">
+              ▶ Open Camera
+            </button>
+            <button class="button-capture" id="captureBtn" disabled>
+              ⊙ Capture Photo
+            </button>
+            <button class="button-close" id="closeCamBtn" disabled>
+              ✕ Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="table-section">
+      <table class="attendance-table">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Roll number</th>
+            <th>Status</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody id="attendanceBody"> 
+        </tbody>
+      </table>
+    </div>
+
+    <div class="location-overlay" id="locationOverlay">
+      <div class="location-modal">
+        <div class="location-spinner"></div>
+        <p class="location-modal-text">Fetching Location...</p>
+    </div>
+  </div>
+
+    <script src="script2.js"></script>
+  </body>
+</html>
